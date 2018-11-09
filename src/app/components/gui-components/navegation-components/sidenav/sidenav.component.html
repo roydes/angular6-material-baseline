@@ -1,0 +1,20 @@
+<mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav color="primary"
+          [mode]="mobileQuery.matches ? 'over' : 'side'"
+          [fixedInViewport]="mobileQuery.matches"
+		  fixedTopGap="0"
+		  [opened] ="opened">
+      <mat-nav-list>
+      <!-- Content projection for more reusable component with ng-content-->
+      <ng-content select=".app-menu"></ng-content>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-content">
+        <ng-content select=".dash-content"></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+

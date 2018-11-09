@@ -1,0 +1,6 @@
+<ng-container *ngFor="let parentItem of menuMap">
+    <a routerLink="/crud-example"><button routerLink="/crud-example" mat-menu-item [matMenuTriggerFor]="childMenu">{{ parentItem.title }}</button></a>
+    <mat-menu #childMenu="matMenu" [overlapTrigger]="false" >
+       <button routerLink="parentItem.routerLink" *ngFor="let childItem of parentItem.childs" mat-menu-item>{{ childItem.title }}</button>
+    </mat-menu>
+</ng-container>

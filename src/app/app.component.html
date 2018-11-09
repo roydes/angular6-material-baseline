@@ -1,0 +1,16 @@
+<div [class.is-mobile]="mobileQuery.matches">
+<app-toolbar
+  (sidenavOpenedEmitter)="sidenavOpenedChange($event)"
+  [title]="title"
+  >
+</app-toolbar>
+
+  <app-sidenav [(opened)]="sidenavOpened">
+      <dynamic-menu [menuMap]="menuMap" class="app-menu"></dynamic-menu>
+      <div class="dash-content">
+          <button routerLink="/crud-example" mat-menu-item [matMenuTriggerFor]="childMenu">CRUD Example</button>
+          <router-outlet></router-outlet>
+      </div>
+  </app-sidenav>
+
+</div>
